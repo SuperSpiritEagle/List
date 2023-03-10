@@ -64,7 +64,7 @@ namespace DynamicArrayList
             if (numbers.Count <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("нет числе");
+                Console.WriteLine("нет чисел");
                 Console.ForegroundColor = ConsoleColor.White;
             }
             else
