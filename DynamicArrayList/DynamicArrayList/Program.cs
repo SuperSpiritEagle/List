@@ -28,9 +28,7 @@ namespace DynamicArrayList
 
                 if (userInput == commandSum)
                 {
-                    int sum = Sum(numbers);
-
-                    Console.WriteLine(sum + "\n");
+                    ShowSum(numbers);
                 }
                 else if (userInput == commanPrint)
                 {
@@ -69,7 +67,7 @@ namespace DynamicArrayList
             }
         }
 
-        private static int Sum(List<int> numbers)
+        private static void ShowSum(List<int> numbers)
         {
             int sum = 0;
 
@@ -78,7 +76,7 @@ namespace DynamicArrayList
                 sum += numbers[i];
             }
 
-            return sum;
+            Console.WriteLine(sum+"\n");
         }
 
         private static void Print(List<int> numbers)
