@@ -15,7 +15,6 @@ namespace DynamicArrayList
             string commandDelete = "delete";
             string userInput = "";
 
-
             while (userInput != commandExit)
             {
                 Console.WriteLine($"Введите [{commandSum}] для сложения введенных чисел,\n" +
@@ -61,7 +60,7 @@ namespace DynamicArrayList
             if (numbers.Count <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("нет чисел"+"\n");
+                Console.WriteLine("нет чисел" + "\n");
                 Console.ForegroundColor = ConsoleColor.White;
             }
             else
