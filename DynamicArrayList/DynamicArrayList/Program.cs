@@ -34,28 +34,30 @@ namespace DynamicArrayList
 
                 if (userInput == commandSum)
                 {
-                    Sum(numbers);
+                    int sum = Sum(numbers);
+
+                    Console.WriteLine(sum);
                 }
                 else if (userInput == commanPrint)
                 {
                     Print(numbers);
                 }
-                else if(userInput == commandDelete)
+                else if (userInput == commandDelete)
                 {
                     DeleteLastNumber(numbers);
                 }
                 else
                 {
-                    FillArray(numbers, userInput);
+                    addNumber(numbers, userInput);
                 }
             }
         }
 
-        private static void FillArray(List<int> numbers, string userInput)
+        private static void addNumber(List<int> numbers, string userInput)
         {
-            if (int.TryParse(userInput, out int addNumber))
+            if (int.TryParse(userInput, out int number))
             {
-                numbers.Add(addNumber);
+                numbers.Add(number);
             }
         }
 
@@ -73,7 +75,7 @@ namespace DynamicArrayList
             }
         }
 
-        private static void Sum(List<int> numbers)
+        private static int Sum(List<int> numbers)
         {
             int sum = 0;
 
@@ -82,7 +84,7 @@ namespace DynamicArrayList
                 sum += numbers[i];
             }
 
-            Console.WriteLine(sum);
+            return sum;
         }
 
         private static void Print(List<int> numbers)
