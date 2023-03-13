@@ -15,19 +15,14 @@ namespace DynamicArrayList
             string commandDelete = "delete";
             string userInput = "";
 
-            Console.WriteLine($"Введите [{commandSum}] для сложения введенных чисел,\n" +
-                              $"введите [{commanPrint}] чтобы вывести все введенные числа,\n" +
-                              $"введите [{commandDelete}] чтобы удалить последнее введенное число,\n" +
-                              $"введите [{commandExit}] чтобы выйти из программы.\n");
-
-            Console.WriteLine("Для продолжения нажмите любую клавишу");
-            Console.ReadKey();
-
-            Console.Clear();
 
             while (userInput != commandExit)
             {
-                Console.WriteLine($"enter a number [{commandSum}][{commanPrint}][{commandDelete}][{commandExit}]");
+                Console.WriteLine($"Введите [{commandSum}] для сложения введенных чисел,\n" +
+                                  $"введите [{commanPrint}] чтобы вывести все введенные числа,\n" +
+                                  $"введите [{commandDelete}] чтобы удалить последнее введенное число,\n" +
+                                  $"введите [{commandExit}] чтобы выйти из программы.\n");
+
                 userInput = Console.ReadLine();
 
                 Console.Clear();
@@ -36,7 +31,7 @@ namespace DynamicArrayList
                 {
                     int sum = Sum(numbers);
 
-                    Console.WriteLine(sum);
+                    Console.WriteLine(sum + "\n");
                 }
                 else if (userInput == commanPrint)
                 {
@@ -48,12 +43,12 @@ namespace DynamicArrayList
                 }
                 else
                 {
-                    addNumber(numbers, userInput);
+                    AddNumber(numbers, userInput);
                 }
             }
         }
 
-        private static void addNumber(List<int> numbers, string userInput)
+        private static void AddNumber(List<int> numbers, string userInput)
         {
             if (int.TryParse(userInput, out int number))
             {
@@ -66,7 +61,7 @@ namespace DynamicArrayList
             if (numbers.Count <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("нет чисел");
+                Console.WriteLine("нет чисел"+"\n");
                 Console.ForegroundColor = ConsoleColor.White;
             }
             else
@@ -94,7 +89,7 @@ namespace DynamicArrayList
                 Console.Write($"{number} ");
             }
 
-            Console.WriteLine();
+            Console.WriteLine("\n");
         }
     }
 }
